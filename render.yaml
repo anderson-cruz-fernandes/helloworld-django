@@ -1,7 +1,11 @@
+# Exported from Render on 2024-06-05T21:23:22Z
 services:
-  - type: web
-    plan: free
-    name: mysite
-    runtime: python
-    buildCommand: "pip3 --disable-pip-version-check --no-cache-dir install -r requirements.txt"
-    startCommand: "python manage.py runserver --noreload"
+- type: web
+  name: mysite
+  runtime: python
+  repo: https://github.com/anderson-cruz-fernandes/helloworld-django
+  plan: free
+  region: oregon
+  buildCommand: pip3 --disable-pip-version-check --no-cache-dir install -r requirements.txt
+  startCommand: python manage.py runserver 0.0.0.0:10000 --noreload
+version: "1"
